@@ -14,4 +14,4 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname,'public')));
 app.use(mainRoute);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
