@@ -6,7 +6,8 @@
     "scripts": {
         "compile:sass": "node-sass main.scss public/css/style.css -w",
         "devserver": "live-server",
-        "start": "npm-run-all --parallel devserver compile:sass",
+        "start": "node app.js",
+        "start-dev-server": "npm-run-all --parallel devserver compile:sass",
         "start-server": "nodemon app.js"
     },
     "author": "",
