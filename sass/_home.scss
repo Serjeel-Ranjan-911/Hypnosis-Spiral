@@ -1,0 +1,114 @@
+body {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.spiral {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgb(26, 26, 26);
+    -webkit-mask: url(../css/svg/h2.svg) no-repeat center;
+    mask: url(../css/svg/h2.svg) no-repeat center;
+
+    animation: rotation 3.5s infinite linear;
+}
+
+.toggle {
+    width: 3rem;
+    height: 3rem;
+    z-index: 300;
+    cursor: pointer;
+
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    margin: 1rem;
+    transition: all 0.3s;
+
+    background-color: $color-toggle;
+    -webkit-mask: url(../css/svg/chevron.svg) no-repeat center;
+    mask: url(../css/svg/chevron.svg) no-repeat center;
+
+    &:hover {
+        //transform: translateX(1rem);
+    }
+}
+
+.slider {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    padding: 1rem;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: $color-secondry;
+
+    box-shadow: 2rem 0 5rem rgba($color: #000000, $alpha: 0.4);
+
+    visibility: hidden;
+    opacity: 0;
+    &__height,
+    &__width {
+        margin: 1rem;
+        flex: 0 0 80%;
+
+        -webkit-appearance: none;
+        background: $color-grey-2;
+        border-radius: 10px;
+        height: 1rem;
+        outline: none;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background: $color-primary;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 0.7rem 1rem rgba($color: #000000, $alpha: 0.4);
+
+            &:hover {
+                width: 2.5rem;
+                height: 2.5rem;
+                background: $color-primary-dark;
+                box-shadow: 0 1rem 1.5rem rgba($color: #000000, $alpha: 0.5);
+            }
+        }
+
+        &::-moz-range-thumb {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background: $color-grey-3;
+            cursor: pointer;
+        }
+    }
+
+    &__paragraph {
+        flex: 0 0 80%;
+        color: $color-grey-3;
+        text-transform: uppercase;
+        text-align: end;
+    }
+}
