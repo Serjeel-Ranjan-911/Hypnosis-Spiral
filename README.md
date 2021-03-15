@@ -1,3 +1,1 @@
-lol wut?
-
-Heroku : https://hypnosis-spiral.herokuapp.com/
+[Heroku](https://hypnosis-spiral.herokuapp.com/)
