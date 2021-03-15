@@ -66,8 +66,7 @@ body {
 
     visibility: hidden;
     opacity: 0;
-    &__height,
-    &__width {
+    &__dimension {
         margin: 1rem;
         flex: 0 0 80%;
 

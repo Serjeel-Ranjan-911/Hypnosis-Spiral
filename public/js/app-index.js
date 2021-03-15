@@ -1,22 +1,23 @@
-//connecting to the sliders
-document.querySelector(".slider__height").oninput = function () {
-    changeHeight(parseInt(this.value));
-};
-document.querySelector(".slider__width").oninput = function () {
-    changeWidth(parseInt(this.value));
-};
-
 const spiral = document.querySelector(".spiral");
 
-//DOM functions
-changeHeight = newHeight => {
-    newHeight += 100;
-    spiral.style.height = newHeight + "%";
-};
+//set the default width and height of the svg
+const dimension = parseInt(Math.max(screen.width,screen.height)*1.2);
+console.log(dimension);
+spiral.style.height = dimension+"px";
+spiral.style.width = dimension+"px";
 
-changeWidth = newWidth => {
-    newWidth += 100;
-    spiral.style.width = newWidth + "%";
+//connecting to the sliders
+// document.querySelector(".slider__dimension").oninput = function () {
+//     changeDimension(parseInt(this.value));
+// };
+
+
+//DOM functions
+changeDimension = newDimension => {
+    console.log(spiral.style.height);
+    newDimension *= 10;
+    spiral.style.height = (spiral.style.height+newDimension) + "px";
+    spiral.style.width = (spiral.style.width+newDimension) + "px";
 };
 
 /////////////////////////////toggle button//////////////////////////////////////
